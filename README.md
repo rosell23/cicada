@@ -1,15 +1,14 @@
-<div align="left">
-<img src="logo.jpg" alt="Cicada logo" width="100" height="100">
-</div>
-
-<div align="right">
-<p>Translations :<a href="./README.es.md">Español</a></p>
+<div>
+<img align="left" src="logo.jpg" alt="Cicada logo" width="100" height="100">
+<p align="right">Translations: <a href="./README.es.md">Español</a></p>
 </div>
 
 <div align="center">
 <h1><i>The Cicada OS</i></h1>
 <kbd><a href="#about">About</a></kbd>
+<kbd><a href="#ⅈℂ𝕚𝕔𝕒𝕕𝕒">ⅈℂ𝕚𝕔𝕒𝕕𝕒</a></kbd>
 <kbd><a href="#installation">Installation</a></kbd>
+<kbd><a href="#eula">EULA</kbd>
 </div>
 
 ## <span style="font-variant:small-caps;">About</span> ########################
@@ -27,7 +26,7 @@ It introduces some _improvements_ over _older_ generations, like deterministic
 behaviour (like [seL4 ✦](https://sel4.systems/) does), run-time extensions,
 and a more generic ABI.
 
-This repository includes the microkernel (Cicada<sup>L4</sup), a _Forth_
+This repository includes the microkernel (Cicada<sup>L4</sup>), a _Forth_
 dialect called _MForth_ (micro-Forth or motherfuc**** Forth, depending on how
 you feel), and iCicada (read next section).
 
