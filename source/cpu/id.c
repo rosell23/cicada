@@ -8,6 +8,7 @@
  */
 
 #include "id.h"
+#include <stdbool.h> /* for bool */
 
 /** Execute CPUID with a given function ID */
 cpuid_result_t cpuid(uint32_t function_id)
@@ -25,27 +26,25 @@ cpuid_result_t cpuid(uint32_t function_id)
 }
 
 /** Check if the CPU supports the CPUID instruction */
-int hascpuid(void)
+_Bool hascpuid(void)
 {
-    int supported;
+    _Bool supported;
     asm volatile (
-        "pushf\n\t"              /* save [original] EFLAGS */
-        "pushf\n\t"
-        "pop %%eax\n\t"
-        "mov %%eax, %%ecx\n\t"
-        "xor $0x200000, %%eax\n\t" /* flip ID bit (bit 21) */
-        "push %%eax\n\t"
-        "popf\n\t"
-        "pushf\n\t"
-        "pop %%eax\n\t"
-        "xor %%ecx, %%eax\n\t"      /* Check if bit changed */
-        "shr $21, %%eax\n\t"
-        "and $1, %%eax\n\t"
-        "mov %%eax, %0\n\t"
-        "popf"                       /* Restore original EFLAGS */
+        "pushfq\n\t"              /* Save original RFLAGS */
+        "mov %%rax, %%rcx\n\t"    /* Copy to RCX for comparison */
+        "xor $0x200000, %%rax\n\t"/* Flip ID bit (bit 21) */
+        "push %%rax\n\t"
+        "popfq\n\t"
+        "pushfq\n\t"
+        "pop %%rax\n\t"
+        "xor %%rcx, %%rax\n\t"    /* Check if bit changed */
+        "shr $21, %%rax\n\t"      /* Move ID bit to bit 0 */
+        "and $1, %%rax\n\t"       /* Mask everything else */
+        "mov %%al, %0\n\t"        /* Move lower 8 bits to _Bool output */
+        "popfq"                    /* Restore original RFLAGS */
         : "=r"(supported)
         :
-        : "eax", "ecx"
+        : "rax", "rcx"
     );
     return supported;
 }

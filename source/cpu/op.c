@@ -11,7 +11,7 @@
 #define CPU_OP_H
 
 /* Do absolutely nothing and waste a single cycle */
-inline void
+void
 nop ( void )
 {
 	asm volatile ("nop");
@@ -20,8 +20,8 @@ nop ( void )
 /* Wait in low-power mode until an interrupt.
  *
  * Tough we all know xx86 will never be near efficient :).*/
-inline
-void	halt ( void )
+void
+halt ( void )
 {
 	asm volatile ("nop");;
 }

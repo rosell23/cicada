@@ -36,10 +36,10 @@ enum	vga_modes
 struct	vga_mode
 {
 	/* Callback to set the mode*/
-	vga_set_cback  *setm;
+	vga_set_cback  setm;
 
 	/* Callback to, set a pixel */
-	vga_draw_cback *setpix;
+	vga_draw_cback setpix;
 
 	uint16_t w;
 	uint16_t h;

@@ -13,9 +13,9 @@
 #include <stdint.h> /* for fixed-size types */
 
 /** Output a byte to an I/O port */
-static inline void outb ( uint16_t port, uint8_t val );
+void outb ( uint16_t port, uint8_t val );
 
 /** Input a byte from an I/O port */
-static inline uint8_t inb ( uint16_t port );
+uint8_t inb ( uint16_t port );
 
 #endif /* CPU_IO_H */

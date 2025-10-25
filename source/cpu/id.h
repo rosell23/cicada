@@ -11,6 +11,7 @@
 #define CPU_ID_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 /** Structure to hold CPUID results */
 typedef struct {
@@ -21,9 +22,9 @@ typedef struct {
 } cpuid_result_t;
 
 /** Execute CPUID with a given function ID */
-cpuid_result_t cpuid(uint32_t function_id);
+static inline cpuid_result_t	cpuid ( uint32_t function_id );
 
 /** Check if the CPU supports the CPUID instruction */
-int hascpuid(void);
+bool hascpuid(void);
 
 #endif /* CPU_ID_H */

@@ -5,17 +5,13 @@
  * IMPLIED. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
  * CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION
  * WITH THE WORK OR ITS USE.
- */
+*/
 
-#ifndef CPU_OP_H
-#define CPU_OP_H
+#ifndef INC_H
+#define INC_H
 
-/* Do absolutely nothing and waste a single cycle */
-void	nop ( void );
+/* Common header macros */
+#define __HEADER_BEGIN
+#define __HEADER_END
 
-/* Wait in low-power mode until an interrupt.
- *
- * Tough we all know xx86 will never be near efficient :).*/
-void	halt ( void );
-
-#endif /* !CPU_OP_H */
+#endif /* !INC_H */
