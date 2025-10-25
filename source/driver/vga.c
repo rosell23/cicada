@@ -7,6 +7,26 @@
  * WITH THE WORK OR ITS USE.
 */
 
+ /*---------------------------------------------------------------------------\
+ *                                                                            *
+ * ATTENTION: VGA may be old, but it still obeys laws of physics.             *
+ *                                                                            *
+ * These functions directly and literally modify how to generate timings,     *
+ * electrons, voltages, and sync.                                             *
+ *   By changing some tables present on this file, you **will** burn monitors,*
+ * you **won't** get nothing but complains (and with a lot of reason).        *
+ *   These values are safe & tested, found from the official VGA manuals from *
+ * IBM.                                                                       *
+ *                                                                            *
+ * This is well-known behaviour and has happened with both CRTs and LCDs.     *
+ *                                                                            *
+ * Do NOT poke with any values labeled with CRTC or similar.                  *
+ * You do NOT have any need to change these, nor you will ever have.          *
+ *                                                                            *
+ * That being said, you do need these values to do some of this               *
+ *                                                                            *
+ \---------------------------------------------------------------------------*/
+
 #include "vga.h" /* for vga defs */
 #include <stdint.h> /* for fixed-size types */
 #include "../error/panic.h" /* for gmed */
@@ -53,6 +73,29 @@ vga_char ( char c, uint16_t x, uint16_t y )
 	vmem[(y * vga_curr_mode->w) + x] = ( vga_chattr ( ) | (uint16_t)c );
 }
 
+void
+vga_setcur ( uint16_t x, uint16_t y )
+	{ vga_ptr_x = x;	vga_ptr_y = y; }
+
+void
+setmode_text0 ( void )
+{
+	/* todo */	
+}
+
+void
+setmode_text7 ( void )
+{
+	/* todo */
+}
+
+void
+setmode_graphic13 ( void )
+{
+	/* todo */
+}
+
+
 /** Initialize VGA subsysstem (identified as SYBSYS:VIDEO) */
 void
 vga_init ( enum vga_modes mode )
@@ -61,15 +104,14 @@ vga_init ( enum vga_modes mode )
 	case (VM_TEXT_0):
 		setmode_text0 ();
 		break;
-	case (VM_TEXT_7):
+	case (VM_TEXT_3):
 		setmode_text7 ();
 		break;
 	case (VM_GRAPHIC_13):
 		setmode_graphic13 ();
 		break;
 	default:
-		/* Unsupported mode; guru meditaion */
-		gmed_panic ("SUBSYS:VIDEO reported an unexpected VGA mode.");
+		/* Unsupported mode; exit */
 		break;
 	}
 }

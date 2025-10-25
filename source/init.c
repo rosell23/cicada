@@ -8,18 +8,19 @@
 */
 
 #include "driver/vga.h"
+#include "cpu/op.h"
 
 void
 _xkst ( void )
 {
-	vga_init (VM_TEXT_7);
+	vga_init (VM_TEXT_0);
 	vga_setcol (VC_WHITE, VC_BBLACK);
 
 	vga_cls ();
 	vga_puts ("== CICADA V0.1.0 ==");
 
-	/* Infinite loop to prevent system from continuing */
+	nop ();
 	while(1) {
-		asm volatile("hlt");
+		halt ();
 	}
 }

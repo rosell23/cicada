@@ -7,15 +7,15 @@
  * WITH THE WORK OR ITS USE.
  */
 
-#ifndef CPU_IO_H
-#define CPU_IO_H
+#ifndef CPU_OP_H
+#define CPU_OP_H
 
-#include <stdint.h> /* for fixed-size types */
+/* Do absolutely nothing and waste a single cycle */
+inline void	nop ( void );
 
-/** Output a byte to an I/O port */
-static inline void outb ( uint16_t port, uint8_t val );
+/* Wait in low-power mode until an interrupt.
+ *
+ * Tough we all know xx86 will never be near efficient :).*/
+inline void	halt ( void );
 
-/** Input a byte from an I/O port */
-static inline uint8_t inb ( uint16_t port );
-
-#endif /* CPU_IO_H */
+#endif /* !CPU_OP_H */

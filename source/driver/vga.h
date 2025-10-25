@@ -26,7 +26,7 @@ typedef void ( *vga_set_cback ) ( void );
 
 enum	vga_modes
 {
-	VM_TEXT_7 = 0x0007,
+	VM_TEXT_3 = 0x0003,
 	VM_TEXT_0 = 0x0000,
 
 	VM_GRAPHIC_13 = 0x0013
@@ -84,6 +84,9 @@ inline uint16_t	vga_chattr ( void );
 static enum vga_tm_colors	vga_fg;
 static enum vga_tm_colors	vga_bg;
 static bool                     vga_blinking;
+
+static uint16_t	vga_ptr_x;
+static uint16_t vga_ptr_y;
 
 static struct vga_mode	*vga_curr_mode;
 

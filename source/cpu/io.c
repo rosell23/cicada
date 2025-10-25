@@ -7,15 +7,20 @@
  * WITH THE WORK OR ITS USE.
  */
 
-#ifndef CPU_IO_H
-#define CPU_IO_H
-
 #include <stdint.h> /* for fixed-size types */
+#include "io.h" /* to implement */
 
 /** Output a byte to an I/O port */
-static inline void outb ( uint16_t port, uint8_t val );
+static inline void
+outb ( uint16_t port, uint8_t val );
 
 /** Input a byte from an I/O port */
-static inline uint8_t inb ( uint16_t port );
-
-#endif /* CPU_IO_H */
+static inline uint8_t
+inb ( uint16_t port )
+{
+    uint8_t ret;
+    asm volatile ("inb %1, %0"
+                  : "=a"(ret)
+                  : "Nd"(port));
+    return ret;
+}
