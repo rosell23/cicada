@@ -1,0 +1,134 @@
+           CICADA END-USER LICENSE AGREEMENT (EULA)
+                     The Cicada Project
+                         25/10/25
+
+This is the Cicada End-User License Agreement, version 0.1, as defined by
+the Cicada Project.
+
+Usage of terms such as SHALL, MAY, and SHOULD follows the definitions in
+RFC 2119 and RFC 8174.
+
+== 0.1. Manifesto & Preamble ==
+
+Most end-user license agreements attempt to restrict users to controlled ecosystems,
+keeping them dependent on corporate interests. In contrast, the Cicada EULA is
+designed to ensure autonomy, transparency, and freedom.
+
+Individuals worldwide use the Cicada EULA to keep software free—once again.
+
+	When we refer to “free”, we mean freedom, not price.
+
+== 0.2. Definitions ==
+
+* “EULA” refers to this document.  
+* “Terms” refers to the terms specified by the EULA.  
+* “Work” refers to any material, software, or documentation covered by this EULA.  
+* “Sources” refers to the human-readable files from which Binaries are built.  
+* “Binaries” refers to pre-built, machine-readable forms of the Sources.  
+* “Compatible license” refers to any license that grants freedoms equal to or
+  greater than those in this EULA.  
+* “Unauthorized Usage” refers to any use of the Work that violates these Terms,
+  including but not limited to commercial exploitation, as defined in section
+  1.4.
+* “Copyright”  refers to rights recognized by applicable jurisdictions
+  protecting Works against Unauthorized Usage.  
+* “Commercial usage” means any use, sale, hosting, or service involving
+  financial profit, remuneration, or benefit by for-profit organizations,
+  directly or indirectly.
+* “Larger Work” refers to a work that combines the Work with other material,
+  where the original is identifiable and separable from the extension.
+* “You” refers to you, an user, as a legal entity agreeing with these Terms.
+
+== TERMS AND CONDITIONS ==
+
+== 1.1. Conveying Verbatim Copies ==
+
+You MAY distribute verbatim copies of the Sources, provided that:  
+  * You retain all copyright notices and references to this EULA.  
+  * You provide recipients with a copy of this EULA.  
+  * You do not misrepresent the authorship or origin of the Work.  
+
+== 1.2. Modifications and Derivative Works ==
+
+You MAY modify the Sources and create Derivative Works, provided that:  
+  * Each modified Source File is kept under the EULA.
+  * Clear notice of modifications and the date of change SHALL be kept.
+  * Attribution to the original authors MUST be preserved.
+  * You MAY distribute or incorporate the Work within a Larger Work,
+    as long as:
+	+ these Terms continues to apply to all original and modified Source
+	  Files derived from the Work
+	+ the Larger Work does not, by mere combination, adapt these Terms.
+
+== 1.3. Redistribution and Binaries ==
+
+If you distribute Binaries:  
+  * You MUST make the corresponding Sources easily available. 
+  * You MUST include a copy of this EULA verbatim with your distribution.  
+  * You MUST NOT impose any new restrictions that limit the end user’s
+    rights and freedoms granted herein. 
+
+== 1.4. Restrictions on Commercial Usage ==
+
+The Work is provided primarily for individual use, education, research, and non-profit purposes.
+
+You MAY incorporate the Work in a service or product that generates incidental
+revenue (e.g., via donations or crowdfunding), as long as the Work itself is not
+the primary source of income.
+
+Use of the Work as a main source of profit—such as by selling it, licensing it,
+or making it a central component of a for-profit product or service--constitutes
+unauthorized commercial exploitation.
+
+Organizations wishing to commercially exploit the Work may contact the original
+authors or maintainers to obtain a separate commercial license.
+
+== 1.5. Termination and Liability ==
+
+Failure to comply with the Terms will result in termination.  
+If you haven't fixed the violations within a margin of 30 days, you MUST cease
+all use of the Work and take down any distributed copies.
+
+Termination does not affect or void the copyright ownership of the Work, nor
+rights of downstream recipients who have not violated these Terms remains
+unaffected.
+
+THE WORK IS PROVIDED “AS IS”, WITHOUT ANY WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION
+WITH THE WORK OR ITS USE.
+
+== 1.6. Jurisdiction and Validity ==
+
+This EULA is intended for worldwide applicability.  
+Specific legal interpretations SHALL be guided by principles of international
+copyright and fair use law.  
+If any clause is found invalid, the remaining Terms SHALL remain in effect.
+
+-------------------------------------------------------------------------------
+
+               Appendix: How to Apply this EULA to Your Works
+
+Create a `LICENSE` or `COPYING` file in your project’s root (preferably `COPYING`)
+and paste this EULA text verbatim.
+
+To apply the Cicada EULA to your Work, attach the following notice to each Source file:
+
+    Copyright (c) [year] [author]. All rights reserved.
+
+    THE WORK IS PROVIDED “AS IS”, WITHOUT ANY WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION
+    WITH THE WORK OR ITS USE.
+
+If your program includes a command-line interface, you MAY print this clause:
+
+    [description]
+    Copyright (c) [year] [author].
+
+    This program is covered by the Cicada End-User License Agreement.
+    Use the `program warranty` command to display the warranty statement and
+    `program license` to display the full EULA text.
+
+The fictional commands `program warranty` and `program license` show the
+warranty and full EULA, respectively.

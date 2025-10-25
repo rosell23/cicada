@@ -1,0 +1,10 @@
+bin/
+build/
+cpfs/
+*.swp
+*.swo
+*.iso
+.DS_Store
+*.tmp
+.idea
+.vscode

@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2025 The Cicada Project. All rights reserved.
+ *
+ * THE WORK IS PROVIDED “AS IS”, WITHOUT ANY WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION
+ * WITH THE WORK OR ITS USE.
+*/
+
+#ifndef ERROR_PANIC_H
+#define ERROR_PANIC_H
+
+void __attribute__((noreturn))	gmed ( const char * cause );
+
+#endif /* !ERROR_PANIC_H */
+
