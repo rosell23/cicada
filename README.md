@@ -46,8 +46,7 @@ support is nonexistent, unless you happen to use ~**very** specific hardware~.
 
 Now, build the project. You should have a few dependencies installed:
 
-+ [GCC Cross-compiler for your architecture ✦]
-	(https://wiki.osdev.org/GCC_Cross-Compiler)
++ [GCC Cross-compiler for your architecture ✦](https://wiki.osdev.org/GCC_Cross-Compiler)
 + [GForth](https://gforth.org/), to bootstrap MForth (MForth only works in
 	Cicada)
 + [`make`](https://gnu.org/software/make/).
