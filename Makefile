@@ -99,3 +99,11 @@ run: $(DISK)
 
 clean:
 	rm -rf $(GEN_DIR) $(DISK_DIR)
+
+#== Tool ==#
+
+fmt:
+	./tool/fmt.py
+
+.PHONY: fmt
+
