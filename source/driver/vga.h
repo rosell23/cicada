@@ -17,37 +17,9 @@
 __HEADER_BEGIN
 
 /*** I/O Ports and addresses ***/
-#define VGA_MEMADDR 0xB8000  /* VGA Video Memory address */
-#define VGA_CRTC_INDEX 0x3D4 /* CRT Controller Index Register */
-#define VGA_CRTC_DATA 0x3D5  /* CRT Controller Data Register */
-
-typedef void (*vga_draw_cback) (uint16_t, uint16_t, void *);
-typedef void (*vga_set_cback) (void);
-
-enum vga_modes
-{
-  VM_TEXT_3 = 0x0003,
-  VM_TEXT_0 = 0x0000,
-
-  VM_GRAPHIC_13 = 0x0013
-};
-
-/** A VGA mode */
-struct vga_mode
-{
-  /* Callback to set the mode*/
-  vga_set_cback setm;
-
-  /* Callback to, set a pixel */
-  vga_draw_cback setpix;
-
-  uint16_t w;
-  uint16_t h;
-
-  uint8_t depth;
-
-  enum vga_modes id;
-};
+#define VGA_MEMADDR 0xB8000 /* VGA Video Memory address */
+#define VGA_SCREEN_WIDTH 80
+#define VGA_SCREEN_HEIGHT 25
 
 enum vga_tm_colors
 {
@@ -70,26 +42,13 @@ enum vga_tm_colors
   VC_WHITE = 0x00F,
 };
 
-void vga_setcol (enum vga_tm_colors fg, enum vga_tm_colors bg);
-inline void vga_char (char c, uint16_t x, uint16_t y);
+extern uint32_t _vga_cur_x;
+extern uint32_t _vga_cur_y;
+
+void vga_putch (char c);
 void vga_cls (void);
-void vga_delc (uint16_t x, uint16_t y);
-void vga_setcur (uint16_t x, uint16_t y);
-void vga_getcur (uint16_t x, uint16_t y);
 void vga_puts (const char *s);
-void vga_init (enum vga_modes m);
-
-inline uint16_t vga_chattr (void);
-
-static enum vga_tm_colors vga_fg;
-static enum vga_tm_colors vga_bg;
-static bool vga_blinking;
-
-static uint16_t vga_ptr_x;
-static uint16_t vga_ptr_y;
-
-static struct vga_mode *vga_curr_mode;
+inline uint16_t vga_chattrs (char c);
 
 __HEADER_END
-
 #endif /* !__VGA_H__ */

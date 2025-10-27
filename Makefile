@@ -105,5 +105,8 @@ clean:
 fmt:
 	./tool/fmt.py
 
-.PHONY: fmt
+re:
+	$(MAKE) clean all -B
+
+.PHONY: fmt re
 

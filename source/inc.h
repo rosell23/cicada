@@ -10,8 +10,14 @@
 #ifndef INC_H
 #define INC_H
 
-/* Common header macros */
+#ifdef __cpluspluos
+#define __HEADER_BEGIN                                                        \
+  extern "C"                                                                  \
+  {
+#define __HEADER_END }
+#else
 #define __HEADER_BEGIN
 #define __HEADER_END
+#endif
 
 #endif /* !INC_H */
