@@ -1,0 +1,34 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: cross-compilers
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc-multilib g++-multilib
+        sudo apt-get install -y gcc-arm-none-eabi g++-arm-none-eabi
+        sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+
+    - name: format
+      run: make fmt
+      
+    - name: disk
+      run: make disk
+
+    - name: generated archive
+      uses: actions/upload-artifact@v5.0.0
+      with:
+        name: Disk
+        path: gen/
